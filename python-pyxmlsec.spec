@@ -10,6 +10,7 @@ URL:		http://pypyxmlsec.sourceforge.net/
 BuildRequires:	nss-devel
 BuildRequires:	python-devel >= 2.2.1
 BuildRequires:	xmlsec1-devel
+BuildRequires:	xmlsec1-openssl-devel
 %pyrequires_eq	python-modules
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -21,8 +22,7 @@ PyXMLSec is a set of Python bindings for XML Security Library
 %setup -q -n pyxmlsec-%{version}
 
 %build
-# 3 is NSS, do we really want this one?
-echo "3" | env CFLAGS="%{rpmcflags} -I/usr/include/xmlsec1" %{__python} setup.py build
+echo "1" | env CFLAGS="%{rpmcflags} -I/usr/include/xmlsec1" %{__python} setup.py build
 
 %install
 rm -rf $RPM_BUILD_ROOT
