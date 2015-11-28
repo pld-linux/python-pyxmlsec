@@ -22,7 +22,7 @@ PyXMLSec is a set of Python bindings for XML Security Library
 %setup -q -n pyxmlsec-%{version}
 
 %build
-echo "1" | env CFLAGS="%{rpmcflags} -I/usr/include/xmlsec1" %{__python} setup.py build
+echo "1" | env CFLAGS="%{rpmcflags} -I/usr/include/xmlsec1" %py_build
 
 %install
 rm -rf $RPM_BUILD_ROOT
