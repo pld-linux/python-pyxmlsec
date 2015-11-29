@@ -7,6 +7,7 @@ Group:		Libraries/Python
 Source0:	http://labs.libre-entreprise.org/download.php/430/pyxmlsec-%{version}.tar.gz
 # Source0-md5:	150631f634654804076f73a0859fea1a
 URL:		http://pypyxmlsec.sourceforge.net/
+BuildRequires:	rpmbuild(macros) >= 1.710
 BuildRequires:	nss-devel
 BuildRequires:	python-devel >= 2.2.1
 BuildRequires:	xmlsec1-devel
